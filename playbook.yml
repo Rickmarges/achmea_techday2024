@@ -1,0 +1,9 @@
+---
+- name: Achmea TechDay playbook
+  hosts: all
+  gather_facts: false
+  become: false
+  tasks:
+    - name: Run a command
+      ansible.builtin.command: echo "Hello TechDay"
+
