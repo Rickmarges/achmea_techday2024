@@ -1,7 +1,13 @@
 ---
 - name: Achmea TechDay playbook
   hosts: all
-  gather_facts: false
+  gather_facts: true
   become: true
-  roles:
-    - achmea.hello_techday.nginx
+  tasks:
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: rpm
+
+    - name: Include nginx from the collection
+      ansible.builtin.include_role:
+        name: achmea.hello_techday.nginx
