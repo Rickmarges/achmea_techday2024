@@ -1,4 +1,4 @@
 ---
 collections:
-  - ansible.posix
+  - achmea.hello_techday
 
